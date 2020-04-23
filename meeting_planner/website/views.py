@@ -1,7 +1,7 @@
 from datetime import datetime
 from django.shortcuts import render
 from django.http import HttpResponse
-from meetings.models import Meeting, Room
+from meetings.models import Meeting
 
 # Create your views here.
 
@@ -19,8 +19,3 @@ def date(request):
 def about(request):
     return HttpResponse(r"<h1>About</h1><i>Name:</i> Dexter Cunningham<br>" +
                         r"<i>Locale:</i> Wiltshire")
-
-
-def rooms(request):
-    return render(request, "meetings/rooms.html",
-                  {"rooms": Room.objects.all()})
